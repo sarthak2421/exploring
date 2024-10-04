@@ -1,0 +1,14 @@
+@user_router.post("/login",
+                  status_code=status.HTTP_200_OK,
+                  response_model=APIResponse)
+@write_log(write_request=False, write_response=False)
+async def user_login(
+        request: Request,
+        user_details: UserLogin,
+        authorize: AuthJWT = Depends()
+) -> dict:
+
+--Sends user details,domain type name,authorize,flag to user_login service:
+
+async def login_user(user_details: dict,domain_name:str, authorize: AuthJWT, flag: bool) -> dict:
+--calls execute query

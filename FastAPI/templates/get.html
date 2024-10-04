@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get data</title>
+</head>
+<body>
+<form method="post" action="{{ url_for('get_items') }}">
+<!--    <input type="file">-->
+    <input type="text" name="name" placeholder="name">
+    <button type="submit">Submit</button>
+</form>
+<br>
+<br>
+<form method="post" action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
+    <input type="file" id="file" name="file" accept=".csv, .excel, .txt">
+    <input type="submit" value="upload">
+</form>
+
+</body>
+</html>
